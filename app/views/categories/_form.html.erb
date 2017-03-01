@@ -1,0 +1,17 @@
+<%= error_messages_for(@category) %>
+
+<div class="form-group">
+
+	<%= f.label(:Category) %>
+	<%=f.text_field((:name), :class => 'form-control') %>
+
+	<%= f.label(:Description) %>
+	<%=f.text_field((:description), :class => 'form-control') %>
+
+	<%= f.label :image, "Image" %>
+	<%= f.file_field(:image) %>
+
+	<%= f.label(:visible) %>
+	<%= f.check_box(:visible) %>
+
+</div>

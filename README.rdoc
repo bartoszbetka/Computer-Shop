@@ -1,0 +1,6 @@
+== README
+
+This web application isn't open source project. Here presented part of the code. If you want to see full application, contact with me bartoszbetka94@gmail.com to access to private repository.
+
+
+Web application was created on Ruby on Rails and Bootstrap framework. It was also used HTML, CSS, JS language and ajax technology. The application provides CMS nad communicate with paypal service.

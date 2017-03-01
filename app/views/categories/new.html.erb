@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<nav aria-label="...">
+			<ul class="pager">
+				<li class="previous"><%= link_to manage_categories_path do %>
+					<span aria-hidden="true" style="color: #B5B5B5;">&larr;Back to product manage</span>
+				</li><%end%>
+			</ul>
+		</nav>
+		<div class="well">
+
+			<%= form_for(:category, :url => {:action => 'create'}, :html =>{multipart: true}) do |f| %>
+			<%= render(:partial => 'form', :locals => {:f => f} ) %>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-6">
+					<%= submit_tag 'Create category', :class => 'btn btn-primary' %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

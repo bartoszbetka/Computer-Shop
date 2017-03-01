@@ -1,0 +1,27 @@
+<center><%= pluralize(@categories.size, 'category') %>
+	found.</center>
+<table class="table">
+	<tr>
+		<th>Image</th>
+		<th>Category</th>
+		<th>Description</th>
+		<th>Action</th>
+	</tr>
+
+	<tr><% @categories.each do |category| %>
+		<td>
+			<%= image_tag category.image.url(:medium) %></td>
+		<td><%= category.name%></td>
+		<td><%= category.description%></td>
+		<td>
+			<div class="btn-group">
+				<%= link_to("Edit", {:action => 'edit', :id => category.id}, :class => 'btn btn-primary')%>
+				<%= link_to "Delete", category, { data: { confirm: "Are you sure you wish to delete the category '#{category.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+				<%unless category.visible.present? %>
+				<%= link_to("Accept",{:action => 'accept', :id => category.id}, :class => 'btn btn-primary')%>
+				<%end%>
+			</div>
+		</td>
+	</tr>
+	<%end%>
+</table>

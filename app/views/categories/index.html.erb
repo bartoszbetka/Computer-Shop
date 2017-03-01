@@ -1,0 +1,19 @@
+<div class="row">
+  <% @categories.each do |category| %>
+  <%= link_to({:controller => 'products', :action => 'index', :category_id => category.id}) do %>
+  <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="well">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <%= category.name%>
+          <%= image_tag category.image.url(:medium), :class=>'img-responsive' %>
+          <%= category.description%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+  <% end %>
+
+</div>
